@@ -97,23 +97,23 @@ elif menu == "Matriz del Proyecto":
 
     # Imagen de referencia (tu matriz original)
     st.markdown(
-    """
-    <style>
-    .stImage > img {
-        width: 100% !important;
-        height: auto !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+        """
+        <style>
+        .stImage > img {
+            width: 100% !important;
+            height: auto !important;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
-st.image("Educación Zona Rural.jpg", caption="Matriz de referencia del proyecto")
-   
+    st.image("Educación Zona Rural.jpg", caption="Matriz de referencia del proyecto")
 
     st.write("A continuación, se muestra la matriz organizada en recuadros:")
 
     col1, col2, col3 = st.columns(3)
+
 
     with col1:
         st.markdown('<div class="card"><h3>1. Cronograma</h3><p>Diseño (3 meses)<br>Desarrollo (6 meses)<br>Piloto (4 meses)<br>Despliegue (2 meses)</p></div>', unsafe_allow_html=True)
