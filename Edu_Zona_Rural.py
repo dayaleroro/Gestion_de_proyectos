@@ -303,3 +303,4 @@
     }
   ]
 }
+!jupyter nbconvert --to script Edu_Zona_Rural.ipynb
