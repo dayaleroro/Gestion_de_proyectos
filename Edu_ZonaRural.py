@@ -96,7 +96,7 @@ elif menu == "Matriz del Proyecto":
     st.header("📋 Matriz del Proyecto")
 
     # Imagen de referencia (tu matriz original)
-    st.image("Educación Zona Rural.jpg", caption="Matriz de referencia del proyecto", use_column_width=True)
+    st.image("Educación Zona Rural.jpg", caption="Matriz de referencia del proyecto", use_container_width=True)
 
     st.write("A continuación, se muestra la matriz organizada en recuadros:")
 
