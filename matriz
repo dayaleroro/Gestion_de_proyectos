@@ -1,0 +1,87 @@
+import streamlit as st
+import pandas as pd
+
+st.title("📊 Matriz RACI – Proyecto: Plataforma de Aprendizaje Adaptativo con IA en Zonas Rurales")
+
+st.markdown("""
+La matriz **RACI** permite identificar los **roles y responsabilidades** de los miembros del proyecto en cada actividad clave del **EDT**.
+
+- **R (Responsable):** ejecuta la actividad.  
+- **A (Aprobador):** valida o aprueba el resultado.  
+- **C (Consultado):** brinda asesoría o información.  
+- **I (Informado):** recibe comunicación del avance.
+
+---
+""")
+
+# --- Datos de la matriz RACI ---
+data = {
+    "Actividad / Tarea": [
+        # 1. INICIACIÓN
+        "1.1 Acta de constitución del proyecto",
+        "1.2 Definición del alcance preliminar",
+        # 2. PLANIFICACIÓN
+        "2.1 Plan de gestión del alcance",
+        "2.2 Plan de gestión del cronograma",
+        "2.3 Plan de gestión de costos",
+        "2.4 Plan de gestión de calidad",
+        "2.5 Plan de gestión de recursos humanos",
+        "2.6 Plan de comunicaciones",
+        "2.7 Plan de gestión de riesgos",
+        # 3. EJECUCIÓN
+        "3.1 Diseño de la arquitectura de la plataforma",
+        "3.2 Desarrollo del módulo de IA",
+        "3.3 Integración de la base de datos y servidor",
+        "3.4 Pruebas de funcionalidad",
+        "3.5 Implementación del sistema piloto",
+        "3.6 Capacitación docente y técnica",
+        # 4. MONITOREO Y CONTROL
+        "4.1 Seguimiento al cronograma y costos",
+        "4.2 Control de calidad del producto",
+        "4.3 Gestión de incidencias y cambios",
+        # 5. CIERRE
+        "5.1 Evaluación del impacto del proyecto",
+        "5.2 Entrega final y documentación",
+        "5.3 Cierre administrativo y lecciones aprendidas"
+    ],
+    "Director del Proyecto": ["A", "A", "A", "A", "A", "A", "I", "A", "A", "I", "I", "A", "I", "A", "I", "A", "A", "A", "A", "A", "A"],
+    "Gestor de Alcance": ["C", "R", "R", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "C", "I", "I"],
+    "Ingeniero de Requerimientos": ["I", "C", "C", "I", "I", "I", "I", "I", "I", "R", "C", "C", "I", "I", "I", "I", "I", "I", "I", "I", "I"],
+    "Desarrollador de Software": ["I", "I", "I", "C", "C", "I", "I", "I", "I", "R", "R", "R", "R", "R", "I", "I", "I", "I", "I", "I", "I"],
+    "QA Tester": ["I", "I", "I", "I", "I", "C", "I", "I", "I", "I", "C", "I", "R", "C", "I", "C", "R", "I", "I", "I", "I"],
+    "Formador Digital": ["I", "I", "I", "I", "I", "I", "C", "C", "C", "I", "I", "I", "I", "I", "R", "I", "I", "I", "C", "I", "I"],
+    "Analista de Datos": ["I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "C", "C", "I", "C", "C", "C", "R", "I", "I"]
+}
+
+df = pd.DataFrame(data)
+
+# --- Mostrar matriz ---
+st.dataframe(df, use_container_width=True)
+
+# --- Leyenda de cargos ---
+st.markdown("""
+---
+
+### 🧩 **Leyenda de roles**
+| Letra | Significado | Cargo en el proyecto |
+|:------:|:-------------|:---------------------|
+| **R** | Responsable | Ejecuta la tarea asignada |
+| **A** | Aprobador | Valida o aprueba resultados |
+| **C** | Consultado | Brinda orientación o soporte técnico |
+| **I** | Informado | Recibe actualizaciones y reportes |
+
+---
+
+### 👥 **Relación de Cargos**
+- **Director del Proyecto:** supervision general, decisiones clave.  
+- **Gestor de Alcance:** definición y control del alcance.  
+- **Ingeniero de Requerimientos:** análisis funcional y técnico.  
+- **Desarrollador de Software:** codificación e integración del sistema.  
+- **QA Tester:** pruebas y control de calidad.  
+- **Formador Digital:** capacitación y soporte pedagógico.  
+- **Analista de Datos:** análisis de métricas e impacto.
+
+---
+""")
+
+st.success("✅ Matriz RACI completada correctamente. Cada fase del EDT tiene asignados roles claros para garantizar una gestión eficiente del proyecto.")
