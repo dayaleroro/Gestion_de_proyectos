@@ -430,34 +430,80 @@ elif menu == "Matriz RACI":
     ---
     """)
 
-    # --- Datos de la matriz RACI ---
-    data = {
-        "Actividad / Tarea": [
-            "1.1 Acta de constitución del proyecto",
-            "1.2 Definición del alcance preliminar",
-            "2.1 Plan de gestión del alcance",
-            "2.2 Plan de gestión del cronograma",
-            "2.3 Plan de gestión de costos",
-            "2.4 Plan de gestión de calidad",
-            "2.5 Plan de gestión de recursos humanos",
-            "2.6 Plan de comunicaciones",
-            "2.7 Plan de gestión de riesgos",
-            "3.1 Diseño de la arquitectura de la plataforma",
-            "3.2 Desarrollo del módulo de IA",
-            "3.3 Integración de la base de datos y servidor",
-            "3.4 Pruebas de funcionalidad",
-            "3.5 Implementación del sistema piloto",
-            "3.6 Capacitación docente y técnica",
-            "4.1 Seguimiento al cronograma y costos",
-            "4.2 Control de calidad del producto",
-            "4.3 Gestión de incidencias y cambios",
-            "5.1 Evaluación del impacto del proyecto",
-            "5.2 Entrega final y documentación",
-            "5.3 Cierre administrativo y lecciones aprendidas"
-        ],
-        "Director del Proyecto": ["A", "A", "A", "A", "A", "A", "I", "A", "A", "I", "I", "A", "I", "A", "I", "A", "A", "A", "A", "A", "A"],
-        "Gestor de Alcance": ["C", "R", "R", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "I", "C", "I", "I"],
-        "Ingeniero de Requerimientos": ["I", "C", "C", "I", "I", "I", "I", "I", "I", "R", "C", "C", "I", "I", "I", "I", "I", "I", "I", "I", "I"],
-        "Desarrollador de Software": ["I", "I", "I", "C", "C", "I", "I
+    
+    
+  # --- Datos de la matriz RACI ---
+data = {
+    "Actividad / Tarea": [
+        "1.1 Acta de constitución del proyecto",
+        "1.2 Definición del alcance preliminar",
+        "2.1 Plan de gestión del alcance",
+        "2.2 Plan de gestión del cronograma",
+        "2.3 Plan de gestión de costos",
+        "2.4 Plan de gestión de calidad",
+        "2.5 Plan de gestión de recursos humanos",
+        "2.6 Plan de comunicaciones",
+        "2.7 Plan de gestión de riesgos",
+        "3.1 Diseño de la arquitectura de la plataforma",
+        "3.2 Desarrollo del módulo de IA",
+        "3.3 Integración de la base de datos y servidor",
+        "3.4 Pruebas de funcionalidad",
+        "3.5 Implementación del sistema piloto",
+        "3.6 Capacitación docente y técnica",
+        "4.1 Seguimiento al cronograma y costos",
+        "4.2 Control de calidad del producto",
+        "4.3 Gestión de incidencias y cambios",
+        "5.1 Evaluación del impacto del proyecto",
+        "5.2 Entrega final y documentación",
+        "5.3 Cierre administrativo y lecciones aprendidas"
+    ],
+    "Director del Proyecto": [
+        "A", "A", "A", "A", "A", "A", "I", "A", "A",
+        "I", "I", "A", "I", "A", "I", "A", "A", "A", "A", "A", "A"
+    ],
+    "Gestor de Alcance": [
+        "C", "R", "R", "I", "I", "I", "I", "I", "I",
+        "I", "I", "I", "I", "I", "I", "I", "I", "I", "C", "I", "I"
+    ],
+    "Ingeniero de Requerimientos": [
+        "I", "C", "C", "I", "I", "I", "I", "I", "I",
+        "R", "C", "C", "I", "I", "I", "I", "I", "I", "I", "I", "I"
+    ],
+    "Desarrollador de Software": [
+        "I", "I", "I", "C", "C", "I", "I", "I", "I",
+        "C", "R", "R", "R", "C", "I", "I", "I", "C", "I", "I", "I"
+    ],
+    "Especialista en IA": [
+        "I", "I", "C", "I", "I", "I", "I", "I", "C",
+        "C", "R", "C", "C", "C", "I", "I", "I", "C", "I", "I", "I"
+    ],
+    "Administrador de Base de Datos": [
+        "I", "I", "I", "I", "C", "I", "I", "I", "I",
+        "C", "C", "R", "C", "I", "I", "I", "I", "I", "I", "I", "I"
+    ],
+    "Coordinador de Calidad": [
+        "I", "I", "I", "I", "I", "R", "I", "I", "I",
+        "I", "I", "I", "R", "I", "I", "I", "R", "I", "I", "I", "I"
+    ],
+    "Docente Líder": [
+        "I", "C", "I", "I", "I", "C", "I", "I", "I",
+        "I", "I", "I", "C", "R", "R", "I", "C", "I", "C", "C", "I"
+    ],
+    "Gestor de Comunicaciones": [
+        "I", "I", "I", "I", "I", "I", "I", "R", "I",
+        "I", "I", "I", "I", "I", "C", "I", "I", "I", "I", "I", "I"
+    ],
+    "Analista Financiero": [
+        "I", "I", "I", "C", "R", "I", "I", "I", "I",
+        "I", "I", "I", "I", "I", "I", "R", "I", "I", "I", "I", "I"
+    ],
+    "Stakeholders / MEN": [
+        "I", "I", "I", "I", "I", "I", "I", "I", "I",
+        "I", "I", "I", "I", "I", "I", "I", "I", "I", "A", "A", "I"
+    ]
+}
 
+df_raci = pd.DataFrame(data)
+st.dataframe(df_raci, use_container_width=True)
+  
                                     
